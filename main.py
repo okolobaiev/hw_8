@@ -4,7 +4,7 @@ from datetime import datetime, date, timedelta
 def get_birthdays_per_week(users):
     
     # беремо до уваги попередні вихідні дні, якщо тиждень починається з понеділка
-    today = datetime.now() 
+    today = datetime.now().date() 
     start_date =  today - timedelta(days=2) if today.weekday() == 0 else today
     end_date = today + timedelta(days=6)
     two_years = start_date.year != end_date.year
@@ -52,15 +52,16 @@ def get_birthdays_per_week(users):
 
 
 # for tests
-# test_users = [
-#     {"name": "Jonh", "birthday": date(day=28, month=7, year=2023)},
-#     {"name": "Bill", "birthday": date(day=1, month=8, year=2023)},
-#     {"name": "Vasyl", "birthday": date(day=26, month=8, year=2023)},
-#     {"name": "Den", "birthday": date(day=27, month=8, year=2023)},
-#     {"name": "Max", "birthday": date(day=29, month=8, year=2023)},
-#     {"name": "Jack", "birthday": date(day=31, month=8, year=2023)},
-#     {"name": "Ben", "birthday": date(day=1, month=9, year=2023)},
-#     {"name": "Tom", "birthday": date(day=2, month=9, year=2023)},
-#     {"name": "Ivan", "birthday": date(day=3, month=9, year=2023)},
-# ]
-# get_birthdays_per_week(test_users)
+test_users = [
+    {"name": "Jonh", "birthday": date(day=28, month=7, year=2023)},
+    {"name": "Bill", "birthday": date(day=1, month=8, year=2023)},
+    {"name": "Vasyl", "birthday": date(day=26, month=8, year=2023)},
+    {"name": "Den", "birthday": date(day=27, month=8, year=2023)},
+    {"name": "Max", "birthday": date(day=29, month=8, year=2023)},
+    {"name": "Jack", "birthday": date(day=31, month=8, year=2023)},
+    {"name": "Ben", "birthday": date(day=1, month=9, year=2023)},
+    {"name": "Tom", "birthday": date(day=2, month=9, year=2023)},
+    {"name": "Ivan", "birthday": date(day=3, month=9, year=2023)},
+]
+get_birthdays_per_week(test_users)
+
