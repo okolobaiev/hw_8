@@ -4,7 +4,7 @@ from datetime import datetime, date, timedelta
 def get_birthdays_per_week(users):
     
     # беремо до уваги попередні вихідні дні, якщо тиждень починається з понеділка
-    today = date(year=2023, month=8, day=28) 
+    today = datetime.now() 
     start_date =  today - timedelta(days=2) if today.weekday() == 0 else today
     end_date = today + timedelta(days=6)
     two_years = start_date.year != end_date.year
