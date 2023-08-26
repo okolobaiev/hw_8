@@ -34,13 +34,15 @@ def get_birthdays_per_week(users):
                 weekday = 0
             else:
                 continue      
-
+        
+        # додаємо іменинників до списку
         list_of_name = birthday_people.get(weekday)
         if list_of_name != None:
             birthday_people[weekday].append(user["name"])
         else:
             birthday_people[weekday] = [user["name"]]
 
+    # виводимо іменинників в консоль
     current_date = start_date
     while current_date <= end_date:
         list_of_users = birthday_people.get(current_date.weekday())
